@@ -138,11 +138,12 @@ const move = (feature, direction) => {
 }
 
 const exportAvatar = () => {
-    const node = document.getElementById('my-node');
+    /* const node = document.getElementById('my-node'); */
     const generate = document.getElementById('generateContainer');
     generate.innerHTML = ""
 
-    domtoimage.toPng(node)
+    /* generate png on html */
+    /* domtoimage.toPng(node)
     .then (function (dataUrl) {
         const img = new Image();
         img.src = dataUrl;
@@ -150,11 +151,11 @@ const exportAvatar = () => {
     })
     .catch(function (error) {
         console.error('oops, something went wrong!', error);
-    });
+    }); */
 
-    /* domtoimage.toBlob(document.getElementById('my-node'))
+    domtoimage.toBlob(document.getElementById('my-node'))
     .then(function (blob) {
         window.saveAs(blob, 'my-node.png');
-    }); */
+    });
+  
 }
-

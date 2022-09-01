@@ -13,39 +13,61 @@
 
     <div class="container mx-auto pt-10">
         <div class="grid grid-cols-2 gap-4">
-            <div class="flex justify-end">
-                <div class="preview pt-10" id="my-node">
-                    <div class="rounded">
-                        <div class="avatar m-auto mt-10 mb-10 relative">
-                            <div class="avatar_bg absolute">
-                                <img class="relative" id="bg" src="./assets/img/bg/bg-style-01.svg" alt="bg">
-                            </div>
-
-                            <div class="avatar__inner rounded-full overflow-hidden relative m-auto">
-                                <div class="avatar_hair absolute inset-x-0 m-auto w-full">
-                                    <img id="hair" class="m-auto relative" src="./assets/img/hair/hair-style-01.svg" alt="hair">
+            <div class="flex justify-end pt-10">
+                <div class="preview">
+                    <div class="rounded" id="my-node">
+                        <div class="avatar m-auto relative">
+                            <div class="myNode">
+                                <div class="avatar_bg absolute">
+                                    <img class="relative" id="bg" src="./assets/img/bg/bg-style-01.svg" alt="bg">
                                 </div>
 
-                                <div class="avatar_face absolute inset-x-0 m-auto w-full">
-                                    <img id="face" class="m-auto relative" src="./assets/img/face/face-style-01.svg" alt="face">
-                                </div>
+                                <div class="avatar__inner rounded-full overflow-hidden absolute m-auto left-0 right-0">
+                                    <div class="avatar_hair absolute inset-x-0 m-auto w-full">
+                                        <img id="hair" class="m-auto relative" src="./assets/img/hair/hair-style-01.svg" alt="hair">
+                                    </div>
 
-                                <div class="avatar_eyes absolute inset-x-0 m-auto w-full">
-                                    <img id="eyes" class="m-auto relative" src="./assets/img/eyes/eyes-style-01.svg" alt="eyes">
-                                </div>
+                                    <div class="avatar_face absolute inset-x-0 m-auto w-full">
+                                        <img id="face" class="m-auto relative" src="./assets/img/face/face-style-01.svg" alt="face">
+                                    </div>
 
-                                <div class="avatar_mouth absolute inset-x-0 m-auto w-full">
-                                    <img id="mouth" class="m-auto relative" src="./assets/img/mouth/mouth-style-01.svg" alt="mouth">
-                                </div>
+                                    <div class="avatar_eyes absolute inset-x-0 m-auto w-full">
+                                        <img id="eyes" class="m-auto relative" src="./assets/img/eyes/eyes-style-01.svg" alt="eyes">
+                                    </div>
 
-                                <div class="avatar_outfit absolute inset-x-0 m-auto w-full">
-                                    <img id="outfit" class="m-auto relative" src="./assets/img/outfit/outfit-style-01.svg" alt="outfit">
+                                    <div class="avatar_mouth absolute inset-x-0 m-auto w-full">
+                                        <img id="mouth" class="m-auto relative" src="./assets/img/mouth/mouth-style-01.svg" alt="mouth">
+                                    </div>
+
+                                    <div class="avatar_outfit absolute inset-x-0 m-auto w-full">
+                                        <img id="outfit" class="m-auto relative" src="./assets/img/outfit/outfit-style-01.svg" alt="outfit">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <button 
+                        class="rounded-full bg-yellow-500 py-2 px-10 text-white m-auto block my-5" 
+                        onclick="exportAvatar()"
+                    >
+                        DOWNLOAD
+                    </button>
+
+                    <div class="text-center">
+                        <h2 class="text-white text-3xl" >Resources</h4>
+                        <a class="text-white" href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind CSS</a>
+                        <br>
+                        <a class="text-white" href="https://drawkit.com/product/playful-avatar-creator" target="_blank">Illustrations</a>
+                        <br>
+                        <a class="text-white" href="https://github.com/tsayen/dom-to-image" target="_blank">Convert to png</a>
+                        <br>
+                        <a class="text-white" href="https://raw.githubusercontent.com/sebastrog/datappi/main/avatarcreator/js/data.js" target="_blank">Data github</a>
+                        <br>
+                        <a class="text-white" href="https://github.com/sebastrog/avatarcreator.git" target="_blank">Repository</a>
                     </div>
                 </div>
+
             </div>
             
             <div class="selectFeatures">
@@ -209,23 +231,29 @@
             </div>
         </div>
 
-        <button class="rounded-full bg-yellow-500 py-2 px-10 text-white m-auto block mb-10" onclick="exportAvatar()">generate to download</button>
-        <div class="text-center">
-            <h2 class="text-white text-3xl" >Resources</h4>
-            <a class="text-white" href="https://drawkit.com/product/playful-avatar-creator" target="_blank">Illustrations</a>
-            <br>
-            <a class="text-white" href="https://github.com/tsayen/dom-to-image" target="_blank">Convert to png</a>
-            <br>
-            <a class="text-white" href="https://raw.githubusercontent.com/sebastrog/datappi/main/avatarcreator/js/data.js" target="_blank">Data github</a>
-            <br>
-            <a class="text-white" href="https://github.com/sebastrog/avatarcreator.git" target="_blank">Repository</a>
-            <br>
-            <a class="text-white" href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind CSS</a>
-        </div>
         <div id="generateContainer" class="generate overflow-hidden block m-auto"></div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+            </div>
+
+        </div>
+
+        <div class="modal">
+            <div class="modal__inner">
+                <div class="modal__content"></div>
+            </div>
+        
+                
+        </div>
+
 
     </div>
 
+    <script src="./assets/js/filesaver.js"></script>
     <script src="./assets/js/dom-to-image.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/scripts.js"></script>
