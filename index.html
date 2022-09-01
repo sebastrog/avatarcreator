@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <title>avatar creator</title>
+</head>
+<body>
+
+    <div class="container mx-auto pt-10">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex justify-end">
+                <div class="preview pt-10" id="my-node">
+                    <div class="rounded">
+                        <div class="avatar m-auto mt-10 mb-10 relative">
+                            <div class="avatar_bg absolute">
+                                <img class="relative" id="bg" src="./assets/img/bg/bg-style-01.svg" alt="bg">
+                            </div>
+
+                            <div class="avatar__inner rounded-full overflow-hidden relative m-auto">
+                                <div class="avatar_hair absolute inset-x-0 m-auto w-full">
+                                    <img id="hair" class="m-auto relative" src="./assets/img/hair/hair-style-01.svg" alt="hair">
+                                </div>
+
+                                <div class="avatar_face absolute inset-x-0 m-auto w-full">
+                                    <img id="face" class="m-auto relative" src="./assets/img/face/face-style-01.svg" alt="face">
+                                </div>
+
+                                <div class="avatar_eyes absolute inset-x-0 m-auto w-full">
+                                    <img id="eyes" class="m-auto relative" src="./assets/img/eyes/eyes-style-01.svg" alt="eyes">
+                                </div>
+
+                                <div class="avatar_mouth absolute inset-x-0 m-auto w-full">
+                                    <img id="mouth" class="m-auto relative" src="./assets/img/mouth/mouth-style-01.svg" alt="mouth">
+                                </div>
+
+                                <div class="avatar_outfit absolute inset-x-0 m-auto w-full">
+                                    <img id="outfit" class="m-auto relative" src="./assets/img/outfit/outfit-style-01.svg" alt="outfit">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="selectFeatures">
+                <div class="options">
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('hair', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('hair', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('hair', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('hair', 'down')">
+                            </button>
+                        </div>
+                    
+                        <ul class="list__hairs bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showHairsList"> </ul>
+                    </div>
+
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('face', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('face', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('face', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('face', 'down')">
+                            </button>
+                        </div>
+
+                        <ul class="list__faces bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showFacesList"> </ul>
+                    </div>
+
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('eyes', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('eyes', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('eyes', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('eyes', 'down')">
+                            </button>
+                        </div>
+                    
+                        <ul class="list__faces bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showEyesList"> </ul>
+                    </div>
+
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('mouth', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('mouth', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('mouth', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('mouth', 'down')">
+                            </button>
+                        </div>
+                
+                        <ul class="list__faces bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showMouthList"> </ul>
+                    </div>
+
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('outfit', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('outfit', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('outfit', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('outfit', 'down')">
+                            </button>
+                        </div>
+                    
+                        <ul class="list__faces bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showOutfitList"> </ul>
+                    </div>
+
+                    <div class="flex">
+                        <div class="controls mr-5 relative">
+                            <button 
+                                class="chevron-arrow left absolute" 
+                                onclick="move('bg', 'left')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow up absolute left-0 right-0 m-auto" 
+                                onclick="move('bg', 'up')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow right absolute right-0"
+                                onclick="move('bg', 'right')">
+                            </button>
+
+                            <button 
+                                class="chevron-arrow down absolute bottom-0 left-0 right-0 m-auto" 
+                                onclick="move('bg', 'down')">
+                            </button>
+                        </div>
+                    
+                        <ul class="list__faces bg-white rounded p-3 grid grid-cols-5 gap-4 mb-5" id="showBgList"> </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="rounded-full bg-yellow-500 py-2 px-10 text-white m-auto block mb-10" onclick="exportAvatar()">generate to download</button>
+        <div id="generateContainer" class="generate overflow-hidden block m-auto"></div>
+    </div>
+
+    <script src="./assets/js/dom-to-image.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+</html>
