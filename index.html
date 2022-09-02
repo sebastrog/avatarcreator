@@ -12,10 +12,10 @@
 <body>
 
     <div class="container mx-auto pt-10">
-        <div class="grid grid-cols-2 gap-4">
-            <div class="flex justify-end pt-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex fixed lg:relative left-0 right-0 full-width justify-center pt-7 top-0 lg:justify-end  lg:pt-10 preview-mobile">
                 <div class="preview">
-                    <div class="rounded" id="my-node">
+                    <div class="rounded avatar-mobile" id="my-node">
                         <div class="avatar m-auto relative">
                             <div class="myNode">
                                 <div class="avatar_bg absolute">
@@ -48,13 +48,13 @@
                     </div>
 
                     <button 
-                        class="rounded-full bg-yellow-500 py-2 px-10 text-white m-auto block my-5" 
+                        class="rounded-full bg-yellow-500 pt-0 lg:pt-2 pb-2 px-10 text-white m-auto block mb-5" 
                         onclick="exportAvatar()"
                     >
                         DOWNLOAD
                     </button>
 
-                    <div class="text-center">
+                    <div class="text-center hidden lg:block">
                         <h2 class="text-white text-3xl" >Resources</h4>
                         <a class="text-white" href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind CSS</a>
                         <br>
@@ -72,7 +72,7 @@
 
             </div>
             
-            <div class="selectFeatures">
+            <div class="selectFeatures m-auto">
                 <div class="options">
                     <div class="flex">
                         <div class="controls mr-5 relative">

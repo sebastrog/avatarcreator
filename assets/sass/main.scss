@@ -3,6 +3,10 @@
 /* colors */
 $white: white;
 
+/* breakpoints */
+$mq1024: '1024px';
+$mq768: '768px';
+
 /* helpers */
 .tac {
     text-align: center;
@@ -23,6 +27,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .selectFeatures {
     width: 400px;
+
+    @media (max-width: $mq1024) {
+        width: 80%;
+        padding-top: 28rem;
+    }
+
+    @media (max-width: $mq768) {
+        padding-top: 22rem;
+    }
 }
 
 .myNode {
@@ -110,6 +123,11 @@ h1, h2, h3, h4, h5, h6 {
     flex: 0 0 40px;
     height: 40px;
 
+    @media (max-width: $mq768) {
+        flex: 0 0 50px;
+        height: 50px;
+    }
+
     .chevron-arrow.left, .chevron-arrow.right {
         top: 50%;
         margin-top: -7px;
@@ -121,6 +139,14 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 4px solid white;
     border-bottom: 4px solid white;
     width: 10px; height: 10px;
+
+    @media (max-width: $mq768) {
+        border-right: 7px solid #fff;
+        border-bottom: 7px solid #fff;
+        width: 15px;
+        height: 15px;
+    }
+
 }
 .chevron-arrow.left {
     transform: rotate(-225deg);
@@ -173,4 +199,19 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.avatar-mobile {
+    @media (max-width: $mq768) {
+        transform: scale(0.7);
+        margin-top: -4rem;
+    }
+}
+
+.preview-mobile {
+    @media (max-width: $mq1024) {
+        background-color: #212122;
+        z-index: 99;
+        box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
+    }
 }

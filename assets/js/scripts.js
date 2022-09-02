@@ -140,7 +140,7 @@ const move = (feature, direction) => {
 const exportAvatar = () => {
     /* const node = document.getElementById('my-node'); */
     const generate = document.getElementById('generateContainer');
-    generate.innerHTML = ""
+    /* generate.innerHTML = "" */
 
     /* generate png on html */
     /* domtoimage.toPng(node)
